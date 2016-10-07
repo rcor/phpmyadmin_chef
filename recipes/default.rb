@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: wordpress
+# Cookbook Name:: phpmyadmin
 # Recipe:: default
 #
 # Copyright 2016, YOUR_COMPANY_NAME
@@ -20,7 +20,7 @@ end
 package 'unzip' do
   action :install
 end
-include_recipe 'wordpress::apache'
-include_recipe 'wordpress::php5'
-include_recipe 'wordpress::mysql'
-include_recipe 'wordpress::phpmyadmin'
+include_recipe 'phpmyadmin::apache'
+include_recipe 'phpmyadmin::php5'
+include_recipe 'phpmyadmin::mysql'
+include_recipe 'phpmyadmin::phpmyadmin'

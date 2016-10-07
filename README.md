@@ -1,4 +1,4 @@
-wordpress Cookbook
+phpmyadmin Cookbook
 ==================
 TODO: Enter the cookbook description here.
 
@@ -11,14 +11,14 @@ TODO: List your cookbook requirements. Be sure to include any requirements this 
 
 e.g.
 #### packages
-- `toaster` - wordpress needs toaster to brown your bagel.
+- `toaster` - phpmyadmin needs toaster to brown your bagel.
 
 Attributes
 ----------
 TODO: List your cookbook attributes here.
 
 e.g.
-#### wordpress::default
+#### phpmyadmin::default
 <table>
   <tr>
     <th>Key</th>
@@ -27,7 +27,7 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['wordpress']['bacon']</tt></td>
+    <td><tt>['phpmyadmin']['bacon']</tt></td>
     <td>Boolean</td>
     <td>whether to include bacon</td>
     <td><tt>true</tt></td>
@@ -36,17 +36,17 @@ e.g.
 
 Usage
 -----
-#### wordpress::default
+#### phpmyadmin::default
 TODO: Write usage instructions for each cookbook.
 
 e.g.
-Just include `wordpress` in your node's `run_list`:
+Just include `phpmyadmin` in your node's `run_list`:
 
 ```json
 {
   "name":"my_node",
   "run_list": [
-    "recipe[wordpress]"
+    "recipe[phpmyadmin]"
   ]
 }
 ```

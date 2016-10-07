@@ -13,8 +13,14 @@ end
 execute 'rm files' do
   command 'rm -rfv /tmp/phpMyAdmin-4.6.4-english/'
 end
-
-
+cookbook_file '/var/www/html//themes/pmahomme/img/logo_left.png' do
+  source 'chavo.png'
+  action :create
+end
+cookbook_file '/var/www/html//themes/pmahomme/img/logo_right.png' do
+ source 'logo.png'
+ action :create
+end
 execute "change permission" do
   command <<-EOH
     WP_OWNER=www-data # &lt;
@@ -28,4 +34,15 @@ execute "change permission" do
     find ${WP_ROOT} -type f -exec chmod 644 {} \\;
 
     EOH
+end
+
+template '/var/www/html/config.inc.php' do
+  source 'config.inc.php.erb'
+  mode '0755'
+  variables({
+    :auth => node.default[:phpmyadmin][:auth],
+    :host => node.default[:phpmyadmin][:host],
+    :connect_type => node.default[:phpmyadmin][:connect_type],
+    :allow_password => node.default[:phpmyadmin][:allow_password]
+    })
 end
